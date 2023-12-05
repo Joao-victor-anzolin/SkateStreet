@@ -1,0 +1,79 @@
+﻿ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Somativa</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Somativa.styles.css" asp-append-version="true" />
+</head>
+<body style="background-color: #1D1D1D" class="text-white">
+    <header class="row w-100 m-0">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm align-items-center" style="background-color: #222222">
+            <div class="container-fluid">
+                <a class="navbar-brand justify-content-sm-center" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/logo.png" class="w-25 mt-3 mb-2" /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-open" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span><svg bootstrap-icon="List" height="32" width="32" class="text-white"></svg></span>
+                </button>
+                <div class="navbar-collapse navbar-open collapse d-sm-inline-flex justify-content-end text-sm-center">
+                    <partial name="_LoginPartial"/>
+                </div>
+            </div>
+
+
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm" style="background-color: #191919;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-cob" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span><svg bootstrap-icon="List" height="32" width="32" class="text-white"></svg></span>
+                </button>
+                <div class="navbar-collapse navbar-cob collapse d-sm-inline-flex justify-content-between" >
+                    <ul class="navbar-nav flex-grow-1 justify-content-between" >
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Fornecedores" asp-action="Index">Fornecedores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Categorias" asp-action="Index">Categorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Produtos" asp-action="Index">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Vendas" asp-action="Index">Vendas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Compras" asp-action="Index">Compras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Relatorio" asp-action="RelatProd">Relatório de produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white hover-text" asp-area="" asp-controller="Relatorio" asp-action="RelatMov">Relatório de movimentações</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

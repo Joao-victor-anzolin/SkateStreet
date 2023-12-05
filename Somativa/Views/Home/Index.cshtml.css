@@ -1,0 +1,23 @@
+﻿.overlay:hover {
+    background-color: #E4E4E9;
+    opacity: 50%;
+    padding: 10px;
+    transition: 450ms
+}
+
+
+.overlayw:hover {
+    background-color: #ffffff;
+    opacity: 50%;
+    padding: 10px;
+    transition: 450ms;
+    
+    
+}
+
+.overlaydg:hover {
+    background-color: #F3F3F3;
+    opacity: 50%;
+    padding: 10px;
+    transition: 450ms
+}
