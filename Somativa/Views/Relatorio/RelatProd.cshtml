@@ -1,75 +1,90 @@
 ﻿@model IEnumerable<Somativa.Models.Produto>
 
 @{
-	ViewData["Title"] = "RelatProd";
+    ViewData["Title"] = "RelatProd";
 
-	List<Categoria> categorias = new List<Categoria>();
-	categorias.Add(new Categoria { CategoriaId=new Guid(), Nome="Todas" });
-	var categ = ViewData["Categ"] as List<Categoria>;
+    List<Categoria> categorias = new List<Categoria>();
+    categorias.Add(new Categoria { CategoriaId = new Guid(), Nome = "Todas" });
+    var categ = ViewData["Categ"] as List<Categoria>;
 
-	foreach (var item in categ)
-	{
-		categorias.Add(new Categoria { CategoriaId = item.CategoriaId, Nome = item.Nome });
-	}
+    foreach (var item in categ)
+    {
+        categorias.Add(new Categoria { CategoriaId = item.CategoriaId, Nome = item.Nome });
+    }
 }
 
-<h1>RelatProd</h1>
+<h1>Relatório Produtos</h1>
 
 <!--
 <img src="@Url.Action("GetImage", "Relatorio", new { imageName = "imagem.png" })" alt="Descrição da imagem">
 -->
 <form>
-	<div id="filtros">
-		<label>Categoria</label>
-		<select name="inCategoria" class="ms-3 me-3">
-			@foreach (var item in categorias)
-			{
-				<option value="@item.CategoriaId">@item.Nome</option>
-			}
-			
-		</select>
-		<label>Nome</label>
-		<input name="inNome" type="text" class="ms-3 me-3" />
-		<button asp-action="SearchProd" class="btn btn-success">Filtrar</button>
-	</div>
+    <div id="filtros">
+        <div class="row my-3">
+            <div class="col-sm-12 col-md-6 col-lg-5">
+                <label class="form-label">Categoria</label>
+                <select class="form-select" name="inCategoria" class="ms-3 me-3">
+                    @foreach (var item in categorias)
+                    {
+                        <option value="@item.CategoriaId">@item.Nome</option>
+                    }
+
+                </select>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-5">
+                <label class="form-label">Nome:</label>
+                <input class="form-control" name="inNome" type="text" class="ms-3 me-3" />
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-2 my-2">
+                <br />
+                <button asp-action="SearchProd" class="btn btn-warning text-dark ">Filtrar <svg bootstrap-icon="Filter" height="24" width="24"></svg></button>
+            </div>
+
+        </div>
+    </div>
 </form>
 
-<table class="table">
-	<thead>
-		<tr>
-			<th>
-				@Html.DisplayNameFor(model => model.Nome)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Categoria.Nome)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Estoque)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Preco)
-			</th>
+<div class="table-responsive">
 
-		</tr>
-	</thead>
-	<tbody>
-		@foreach (var item in Model)
-		{
-			<tr>
-				<td>
-					@Html.DisplayFor(modelItem => item.Nome)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Categoria.Nome)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Estoque)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Preco)
-				</td>
 
-			</tr>
-		}
-	</tbody>
-</table>
+    <table class="table text-white table-responsive table-striped">
+        <thead>
+            <tr style="background-color: #191919; color:#FF9900; border: 1px solid #FF9900; border-radius:50px">
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estoque)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Preco)
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="background-color: #F8F8F8; border: 1px solid #FF9900; border-radius:50px" class="text-dark">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoria.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Estoque)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Preco)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

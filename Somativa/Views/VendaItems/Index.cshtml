@@ -2,52 +2,136 @@
 
 @{
     ViewData["Title"] = "Index";
+    var auxId = ViewData["VendaId"];
 }
 
-<h1>Index</h1>
+<h1>Itens Venda</h1>
 
 <p>
-    <a asp-action="Create" asp-route-id="@ViewData["VendaId"]">Create New</a>
+    <a asp-action="Create" asp-route-id="@auxId" class="btn btn-warning text-dark " id="btncriar">Novo <svg bootstrap-icon="PlusCircleFill" height="24" width="24"></svg></a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Venda)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Produto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unitario)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Venda.VendaId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Produto.ProdutoId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantidade)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Unitario)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.VendaItemId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.VendaItemId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.VendaItemId">Delete</a>
-            </td>
-        </tr>
+<div class="table-responsive">
+    <table class="table text-white table-responsive table-striped">
+        <thead>
+            <tr style="background-color: #191919; color:#FF9900; border: 1px solid #FF9900; border-radius:50px">
+                <th>
+                    @Html.DisplayNameFor(model => model.Venda)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Produto)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quantidade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Unitario)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="background-color: #F8F8F8; border: 1px solid #FF9900; border-radius:50px" class="text-dark">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Venda.Nota)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Produto.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantidade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Unitario)
+                    </td>
+                    <td class="text-end">
+                        <a asp-action="Edit" asp-route-id="@item.VendaItemId" class="btn btn-outline-warning"><svg bootstrap-icon="PencilFill" height="24" width="24"></svg></a>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#exampleModalinfo_@item.VendaItemId" asp-route-id="@item.VendaItemId">
+                            <svg bootstrap-icon="InfoCircle" height="24" width="24"></svg>
+                        </button>
+                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal_@item.VendaItemId" asp-route-id="@item.VendaItemId">
+                            <svg bootstrap-icon="Trash" height="24" width="24"></svg>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@foreach (var item in Model)
+{
+
+    <!-- Modal Lixo -->
+    <div class="modal fade " id="exampleModal_@item.VendaItemId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #1D1D1D">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #F02311">Deseja Apagar este item?</h1>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center" style="background-color: #1D1D1D">
+                    Deseja apagar o item:<br />
+                    <span style="color: #FF9900">@item.Venda</span>
+                </div>
+                <div class="modal-footer" style="background-color: #1D1D1D">
+                    <form asp-action="Delete" class="text-white text-center" asp-route-id="@item.VendaItemId">
+                        <input type="hidden" asp-for="@item.VendaItemId" />
+                        <button type="submit" value="Apagar" class="btn btn-outline-danger"> <svg bootstrap-icon="Trash3Fill" height="24" width="24"></svg> </button>
+                        <button type="button" class="btn btn-outline-warning" data-bs-dismiss="modal">Fechar</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
 }
-    </tbody>
-</table>
+
+@foreach (var item in Model)
+{
+    <div class="modal fade " id="exampleModalinfo_@item.VendaItemId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #1D1D1D">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: #F02311">Informações</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-white" style="background-color: #1D1D1D">
+                    <dl class="row">
+                        <dt class="col-sm-2" style="color:#FF9900">
+                            @Html.DisplayNameFor(model => model.Venda):
+                        </dt>
+                        <dd class="col-sm-10">
+                            @item.Venda
+                        </dd>
+
+                        <dt class="col-sm-2" style="color:#FF9900">
+                            @Html.DisplayNameFor(model => model.Produto):
+                        </dt>
+                        <dd class="col-sm-10">
+                            @item.Produto
+                        </dd>
+
+                        <dt class="col-sm-2" style="color:#FF9900">
+                            @Html.DisplayNameFor(model => model.Quantidade):
+                        </dt>
+                        <dd class="col-sm-10">
+                            @item.Quantidade
+                        </dd>
+
+                        <dt class="col-sm-2" style="color:#FF9900">
+                            @Html.DisplayNameFor(model => model.Unitario):
+                        </dt>
+                        <dd class="col-sm-10">
+                            @item.Unitario
+                        </dd>
+                    </dl>
+                </div>
+                <div class="modal-footer" style="background-color: #1D1D1D">
+                    <a asp-action="Edit" asp-route-id="@item.VendaItemId" class="btn btn-outline-warning"><svg bootstrap-icon="PencilFill" height="24" width="24"></svg></a>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

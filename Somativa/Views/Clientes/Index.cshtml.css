@@ -1,0 +1,8 @@
+﻿#btncriar {
+    background-color: #F0B111;
+}
+
+#btncriar:hover {
+    background-color: #DEA30D;
+    transition: 200ms
+}

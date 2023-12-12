@@ -1,0 +1,41 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+
+<div class="row justify-content-center mb-5">
+    <div class="col-8">
+        <h1 class="text-white text-center" style="margin-top: 50px; margin-bottom: 50px"><span style="color: #FF9900">|</span>Cadastre-se</h1>
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control border-1 text-white" style="background-color: #1D1D1D; border: 1px solid #FF9900" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email" class="form-label" style="color: #FF9900">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control border-1 text-white" style="background-color: #1D1D1D; border: 1px solid #FF9900" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.Password" class="form-label" style="color: #FF9900">Senha</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control border-1 text-white" style="background-color: #1D1D1D; border: 1px solid #FF9900" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword" class="form-label" style="color: #FF9900">Confirmar a Senha</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="col-4  ">
+                <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-warning col-3">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

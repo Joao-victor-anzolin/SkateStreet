@@ -264,3 +264,4 @@ C:\Users\Aluno\Desktop\Somativa\Somativa\obj\Debug\net7.0\ref\Somativa.dll
 C:\Users\Aluno\Desktop\Somativa\Somativa\bin\Debug\net7.0\BootstrapIcons.AspNetCore.dll
 C:\Users\Aluno\Desktop\Somativa\Somativa\obj\Debug\net7.0\scopedcss\Views\Home\Index.cshtml.rz.scp.css
 C:\Users\Aluno\Desktop\Somativa\Somativa\obj\Debug\net7.0\scopedcss\Views\Shared\_LoginPartial.cshtml.rz.scp.css
+C:\Users\Aluno\Desktop\Somativa\Somativa\obj\Debug\net7.0\scopedcss\Views\Clientes\Index.cshtml.rz.scp.css

@@ -1,0 +1,8 @@
+#btncriar[b-zyalhll1wz] {
+    background-color: #F0B111;
+}
+
+#btncriar:hover[b-zyalhll1wz] {
+    background-color: #DEA30D;
+    transition: 200ms
+}

@@ -269,40 +269,12 @@
       "PackagePath": "staticwebassets\\font\\Nunito\\static\\Nunito-SemiBoldItalic.ttf"
     },
     {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\1.png",
-      "PackagePath": "staticwebassets\\img\\1.png"
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Bike.png",
+      "PackagePath": "staticwebassets\\img\\Bike.png"
     },
     {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\10994345-adidas-logo-simbolo-branco-com-nome-design-de-roupas-icone-abstrato-futebol-ilustracaoial-com-fundo-preto-gratis-vetor.jpg",
-      "PackagePath": "staticwebassets\\img\\10994345-adidas-logo-simbolo-branco-com-nome-design-de-roupas-icone-abstrato-futebol-ilustracaoial-com-fundo-preto-gratis-vetor.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\2.png",
-      "PackagePath": "staticwebassets\\img\\2.png"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\24455377-vans-marca-logotipo-simbolo-branco-projeto-icone-abstrato-ilustracao-com-preto-fundo-gratis-vetor.jpg",
-      "PackagePath": "staticwebassets\\img\\24455377-vans-marca-logotipo-simbolo-branco-projeto-icone-abstrato-ilustracao-com-preto-fundo-gratis-vetor.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\3.png",
-      "PackagePath": "staticwebassets\\img\\3.png"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\4.png",
-      "PackagePath": "staticwebassets\\img\\4.png"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\5.png",
-      "PackagePath": "staticwebassets\\img\\5.png"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\6.png",
-      "PackagePath": "staticwebassets\\img\\6.png"
-    },
-    {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\7.png",
-      "PackagePath": "staticwebassets\\img\\7.png"
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Design sem nome.png",
+      "PackagePath": "staticwebassets\\img\\Design sem nome.png"
     },
     {
       "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\LOGO.png",
@@ -385,8 +357,24 @@
       "PackagePath": "staticwebassets\\img\\Produtos\\skate_completo_sds_co_7_75_cranial_base_3059_1_4dfff5c8703f8de70067b311aa916dcd_20220707164835.png"
     },
     {
-      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\dc-logo-2947347F4F-seeklogo.com.png",
-      "PackagePath": "staticwebassets\\img\\dc-logo-2947347F4F-seeklogo.com.png"
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Skate1.png",
+      "PackagePath": "staticwebassets\\img\\Skate1.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Skate2.png",
+      "PackagePath": "staticwebassets\\img\\Skate2.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Skate3.png",
+      "PackagePath": "staticwebassets\\img\\Skate3.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Surf1.png",
+      "PackagePath": "staticwebassets\\img\\Surf1.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\Surf2.png",
+      "PackagePath": "staticwebassets\\img\\Surf2.png"
     },
     {
       "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\logo\\Ellipse 1.png",
@@ -407,6 +395,10 @@
     {
       "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\logo\\Ellipse 6.png",
       "PackagePath": "staticwebassets\\img\\logo\\Ellipse 6.png"
+    },
+    {
+      "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\img\\tim-mossholder-vxTsvU8P4RY-unsplash.jpg",
+      "PackagePath": "staticwebassets\\img\\tim-mossholder-vxTsvU8P4RY-unsplash.jpg"
     },
     {
       "Id": "C:\\Users\\Aluno\\Desktop\\Somativa\\Somativa\\wwwroot\\js\\site.js",

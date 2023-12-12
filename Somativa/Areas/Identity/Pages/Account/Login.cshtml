@@ -1,0 +1,57 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<div class="row">
+
+    <div class="col-6">
+
+        <img src="~/img/design sem nome.png" class=" d-none d-lg-block" style="width: 600px" />
+    </div>
+    <div class="col-12 col-lg-6">
+        <h1 class="text-white text-center" style="margin-top: 50px; margin-bottom: 50px"><span style="color: #FF9900">|</span>Faça seu Login</h1>
+        <section >
+
+            <form id="account" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Email" class="form-control border-1 text-white" style="background-color: #1D1D1D; border: 1px solid #FF9900" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                    <label asp-for="Input.Email" class="form-label" style="color: #FF9900">Email</label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.Password" class="form-control border-1 text-white" style="background-color: #1D1D1D; border: 1px solid #FF9900" autocomplete="current-password" aria-required="true" placeholder="password" />
+                    <label asp-for="Input.Password" class="form-label" style="color: #FF9900">Password</label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="checkbox mb-3">
+                    <div class="row">
+                        <div class="col-8">
+                            <label asp-for="Input.RememberMe" class="form-label" style="color: #FF9900">
+                                <input class="form-check-input" asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+
+                       <div class="text-end col-4">
+                            <p>
+                                <a id="forgot-password" asp-page="./ForgotPassword" style="color: #FF9900">Esqueceu sua senha?</a>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4 justify-content-center">
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-warning ">Log in</button>
+                </div>
+                <div>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
